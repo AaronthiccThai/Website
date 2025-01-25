@@ -1,0 +1,101 @@
+@keyframes slideUp {
+  from {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(100%); /* Start below the screen */
+  }
+  to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Final position */
+  }
+}
+/* Slide down is not working properly*/
+@keyframes slideDown {
+  from {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Start at final position */
+  }
+  to {
+    opacity: 0; /* Fully transparent */
+    transform: translateY(100%); /* End below the screen */
+  }
+}
+.TaskWindow.show {
+  animation: slideUp 0.3s ease-out forwards; 
+}
+
+.TaskWindow.hide {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.TaskWindow {
+  position: fixed;
+  background-color:  lightslategray;
+  left: 10px;
+  bottom: 75px;
+  border-radius: 10px;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  opacity: 0.8;
+}
+
+
+.TaskWindow .TaskWindow-main {
+  flex: 1;
+}
+
+
+.TaskWindow .TaskWindow-searchBar {
+  background-color: grey;
+  width: 300px;
+  border: 5px solid grey;
+  padding: 0 10px;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.TaskWindow .TaskWindow-searchBar input {
+  width: 100%; 
+  border: none; 
+  outline: none; 
+  padding: 10px; 
+  font-size: 14px; 
+  border-radius: 10px; 
+  background-color: grey;
+}
+
+.TaskWindow .TaskWindow-searchBar input::placeholder {
+  color: black; 
+}
+.TaskWindow .TaskWindow-bottom {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 5px; 
+  height: 50px; 
+  background-color: grey;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+}
+
+.TaskWindow .TaskWindow-bottom ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+  margin: 0;  
+}
+.TaskWindow .TaskWindow-bottom li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
